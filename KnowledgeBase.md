@@ -6,6 +6,7 @@ Bu dosya, tüm script geliştirme sürecinde öğrendiğimiz kalıpları, hatala
 ## Çalışma Kuralları
 - Sorun çözümü: Tek atımlık patch + kısa kabul kriteri + 1 küçük test. Başarısızsa sadece tek ölçüm ekleyip final patch.
 - Log etiketleri: [BANK], [GE], [TRADE], [HOP], [QS], [OVERLAY]
+
 ## Ortam
 - DreamBot: 3.30.48.1
 - Java: 17+
