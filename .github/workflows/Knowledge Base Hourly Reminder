@@ -1,0 +1,28 @@
+name: Knowledge Base Hourly Reminder
+on:
+  schedule:
+    - cron: "30 * * * *" # every hour at :30 (UTC)
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update reminder issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const title = "Daily/Hourly KB Update Reminder";
+            const issues = await github.paginate(github.rest.issues.listForRepo, { owner, repo, state: "open" });
+            let issue = issues.find(i => i.title === title);
+            if (!issue) {
+              const created = await github.rest.issues.create({ owner, repo, title, body: "Lütfen KnowledgeBase.md içeriğini güncelleyin." });
+              issue = created.data;
+            }
+            const now = new Date().toISOString();
+            await github.rest.issues.createComment({ owner, repo, issue_number: issue.number, body: `Saatlik hatırlatma: ${now}` });
