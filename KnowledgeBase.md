@@ -1,11 +1,11 @@
 # Knowledge Base
+<!-- AUTO-UPDATE-TIMESTAMP --> Last auto check: (set by workflow)
 
 Bu dosya, tüm script geliştirme sürecinde öğrendiğimiz kalıpları, hataları ve çözümleri kalıcı olarak saklar. Operasyonel kurallar ve parametreler için `project-profile.json` kullanılır.
 
 ## Çalışma Kuralları
 - Sorun çözümü: Tek atımlık patch + kısa kabul kriteri + 1 küçük test. Başarısızsa sadece tek ölçüm ekleyip final patch.
 - Log etiketleri: [BANK], [GE], [TRADE], [HOP], [QS], [OVERLAY]
-
 ## Ortam
 - DreamBot: 3.30.48.1
 - Java: 17+
