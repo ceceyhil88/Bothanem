@@ -1,0 +1,59 @@
+{
+  "project_name": "OSRS Bots",
+  "owner": "ceceyhil88",
+  "repository": "Bothanem",
+  "roles": ["MULE", "WORKER"],
+  "runtime": {
+    "dreambot_version": "3.30.48.1",
+    "java_version": "17+",
+    "os": "Windows 11"
+  },
+  "quickstart": {
+    "enabled": true,
+    "params_examples": [
+      "-params profile=m1 role=MULE nogui=1",
+      "-params profile=w1 role=WORKER nogui=1"
+    ],
+    "proxy_flags": {
+      "host_flag": "-proxyHost",
+      "port_flag": "-proxyPort",
+      "user_flag": "-proxyUser",
+      "pass_flag": "-proxyPass"
+    }
+  },
+  "world_policy": {
+    "membership": "P2P",
+    "preferred_worlds": [383, 455],
+    "hop_rate_limit_sec": 10
+  },
+  "bank_policy": {
+    "coins_exact_strategy_priority": [
+      "withdraw_exact_delta",
+      "withdraw_all_then_deposit_diff"
+    ],
+    "force_noted_for_coins": false,
+    "sleep_until_ms": 2500
+  },
+  "trade_policy": {
+    "queue_enforced": true,
+    "verify_offer": true,
+    "accept_delays_ms": [600, 1200]
+  },
+  "overlay": {
+    "show_total_gp": true,
+    "format": "K/M",
+    "probe_bank_every_sec": 10
+  },
+  "logging_standard": {
+    "tags": ["BANK", "GE", "TRADE", "HOP", "QS", "OVERLAY"],
+    "level": "INFO"
+  },
+  "acceptance_criteria": {
+    "bank_exact": "inv(Coins)==X in <=3000ms with <=2 actions",
+    "total_gp_overlay": "Visible single-line GP with K/M, refresh <=10s near bank"
+  },
+  "secrets": {
+    "storage": "env",
+    "redact_in_logs": true
+  }
+}
