@@ -1,5 +1,5 @@
 # Knowledge Base
-<!-- AUTO-UPDATE-TIMESTAMP --> Last auto check: 2026-01-26 04:25:51 UTC
+<!-- AUTO-UPDATE-TIMESTAMP --> Last auto check: 2026-01-26 05:12:13 UTC
 
 Bu dosya, tüm script geliştirme sürecinde öğrendiğimiz kalıpları, hataları ve çözümleri kalıcı olarak saklar. Operasyonel kurallar ve parametreler için `project-profile.json` kullanılır.
 
